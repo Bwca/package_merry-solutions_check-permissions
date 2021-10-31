@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES5",
-    "module": "commonjs",
+    "module": "esnext",
     "moduleResolution": "node",
     "declaration": false,
     "outDir": "./dist",
@@ -9,7 +9,7 @@
     "composite": false,
     "removeComments": true,
     "downlevelIteration": true,
-    "isolatedModules": false,
+    "isolatedModules": true,
     "strict": true,
     "noImplicitAny": true,
     "esModuleInterop": true,
@@ -17,8 +17,13 @@
     "allowJs": true,
     "sourceMap": false,
     "lib": ["ESNext"],
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "noFallthroughCasesInSwitch": true,
+    "resolveJsonModule": true,
+    "noEmit": true
   },
   "include": ["src/**/*"],
-  "exclude": ["src/**/*.test.ts", "src/**/*__test__"]
+  "exclude": ["src/**/*.spec.ts", "src/**/*__test__"]
 }

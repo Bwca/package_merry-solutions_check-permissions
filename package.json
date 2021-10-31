@@ -10,7 +10,7 @@
     "build": "tsup src/index.ts --minify --dts",
     "dev": "nodemon",
     "lint": "eslint --quiet --fix --ext .tsx --ext .ts src/",
-    "test": "jest"
+    "test": "react-scripts test"
   },
   "husky": {
     "hooks": {}
@@ -42,19 +42,14 @@
     "@typescript-eslint/eslint-plugin": "^2.34.0",
     "@typescript-eslint/parser": "^2.34.0",
     "eslint": "^7.0.0",
-    "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jest": "^24.3.2",
-    "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-react": "^7.26.1",
     "husky": "^4.2.5",
-    "jest": "^26.0.1",
-    "nodemon": "^2.0.7",
     "prettier": "2.0.5",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "ts-jest": "^26.0.0",
-    "tsup": "^4.8.17",
+    "react-scripts": "^4.0.3",
     "typescript": "^4.2.3"
   }
 }
