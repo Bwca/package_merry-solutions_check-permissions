@@ -1,5 +1,3 @@
-/** @jest-environment jsdom */
-
 import { renderHook } from '@testing-library/react-hooks/dom';
 
 import { createCheckPermissionsHook } from './create-check-permissions-hook.function';
