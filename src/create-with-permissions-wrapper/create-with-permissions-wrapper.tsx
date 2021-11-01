@@ -1,3 +1,6 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import * as React from 'react';
+
 import { UseCheckPermissions, WithPermissions, WithPermissionsProps } from '../models';
 
 export function createWithPermissionsWrapper(useCheckPermissions: UseCheckPermissions): WithPermissions {
