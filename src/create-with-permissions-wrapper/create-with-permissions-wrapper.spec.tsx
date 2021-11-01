@@ -21,7 +21,6 @@ describe('Tests for WithPermissions', () => {
     // Assert
     expect(baseElement).toBeTruthy();
   });
-
   it('Result should be positive if no required permissions provided', () => {
     // Arrange
     const testId = 'child-element';
