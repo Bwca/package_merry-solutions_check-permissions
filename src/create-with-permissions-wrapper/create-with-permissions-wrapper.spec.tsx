@@ -7,7 +7,7 @@ import { createWithPermissionsWrapper } from './create-with-permissions-wrapper'
 const THE_ONLY_AVAILABLE_PERMISSION = 'some-view-permission';
 const WithPermissions = createWithPermissionsWrapper(createCheckPermissionsHook(() => [THE_ONLY_AVAILABLE_PERMISSION]));
 
-describe('Tests for WithPermissions', () => {
+describe('Tests for WithPermissions without placeholder', () => {
   it('Should render anything really', () => {
     // Arrange
     const renderProps: WithPermissionsProps = {
@@ -76,6 +76,68 @@ describe('Tests for WithPermissions', () => {
 
     // Assert
     expect(queryByTestId(testId)).toBeTruthy();
+  });
+});
+
+describe('Tests for WithPermissions placeholder', () => {
+  const placeholderId = 'placeholder-id';
+  const placeholder = <div data-testid={placeholderId} />;
+
+  it('Placeholder is not visible if no required permissions provided', () => {
+    // Arrange
+    const renderProps: WithPermissionsProps = {
+      children: <div  />,
+      placeholder,
+    };
+
+    // Act
+    const { queryByTestId } = render(renderWithPermissionsWrapper(renderProps));
+
+    // Assert
+    expect(queryByTestId(placeholderId)).toBeFalsy();
+  });
+  it('Placeholder is not visible if required permissions are present in current permissions', () => {
+    // Arrange
+    const renderProps: WithPermissionsProps = {
+      children: <div />,
+      permissions: THE_ONLY_AVAILABLE_PERMISSION,
+      placeholder
+    };
+
+    // Act
+    const { queryByTestId } = render(renderWithPermissionsWrapper(renderProps));
+
+    // Assert
+    expect(queryByTestId(placeholderId)).toBeFalsy();
+  });
+  it('Placeholder is visible if not all required permissions are present', () => {
+    // Arrange
+    const renderProps: WithPermissionsProps = {
+      children: <div />,
+      permissions: [THE_ONLY_AVAILABLE_PERMISSION, 'some-other-permission'],
+      placeholder
+    };
+
+    // Act
+    const { queryByTestId } = render(renderWithPermissionsWrapper(renderProps));
+
+    // Assert
+    expect(queryByTestId(placeholderId)).toBeTruthy();
+  });
+  it('Placeholder is not visible if not all required permissions are present when checkAll parameter is set to false', () => {
+    // Arrange
+    const renderProps: WithPermissionsProps = {
+      children: <div />,
+      permissions: [THE_ONLY_AVAILABLE_PERMISSION, 'some-other-permission'],
+      checkAll: false,
+      placeholder
+    };
+
+    // Act
+    const { queryByTestId } = render(renderWithPermissionsWrapper(renderProps));
+
+    // Assert
+    expect(queryByTestId(placeholderId)).toBeFalsy();
   });
 });
 

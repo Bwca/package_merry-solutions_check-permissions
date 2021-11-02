@@ -24,6 +24,5 @@
     "resolveJsonModule": true,
     "noEmit": true
   },
-  "include": ["src/**/*"],
-  "exclude": ["build-tests", "src/**/*.spec.ts", "src/**/*.spec.tsx"]
+  "include": ["src/**/*"]
 }

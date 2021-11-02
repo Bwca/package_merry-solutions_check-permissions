@@ -1,7 +1,7 @@
 {
-  "name": "ts-template-repo",
+  "name": "@merry-solutions/react-check-permissions",
   "version": "1.0.0",
-  "description": "",
+  "description": "Check user permissions and conditional component rendering.",
   "main": "./dist/index.js",
   "files": [
     "dist/**"
@@ -11,29 +11,24 @@
     "lint": "eslint --quiet --fix --ext .tsx --ext .ts src/",
     "test": "npm run build && react-scripts test --testMatch '**/*.spec.ts?(x)' --watchAll=false"
   },
-  "husky": {
-    "hooks": {}
-  },
-  "lint-staged": {
-    "*.{js,ts,tsx}": [
-      "eslint --fix"
-    ]
-  },
-  "bin": "",
-  "keywords": [],
+  "keywords": [
+    "react",
+    "react-permissions",
+    "permissions"
+  ],
   "author": {
     "name": "Volodymyr Yepishev",
-    "email": "yepishevv@gmail.com"
+    "email": "i.m.bwca@gmail.com"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Bwca/ts-template-repo.git"
+    "url": "git+https://github.com/Bwca/merry-solutions__check_permissions.git"
   },
   "bugs": {
-    "url": "https://github.com/Bwca/ts-template-repo/issues"
+    "url": "https://github.com/Bwca/merry-solutions__check_permissions/issues"
   },
-  "homepage": "https://github.com/Bwca/ts-template-repo#readme",
+  "homepage": "https://github.com/Bwca/merry-solutions__check_permissions/blob/master/README.md",
   "devDependencies": {
     "@testing-library/react": "^12.1.2",
     "@testing-library/react-hooks": "^7.0.2",
